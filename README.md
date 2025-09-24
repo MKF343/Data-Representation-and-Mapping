@@ -14,7 +14,7 @@ Advanced data representation functions for Owl Tech’s CPU design team.
 ## Build Instructions
     ‘‘‘ bash
     gcc -o convert convert.c main.c
-    ./ convert
+    ./convert
     ‘‘‘
 
 ## Test Results
