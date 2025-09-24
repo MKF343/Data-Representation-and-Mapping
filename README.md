@@ -69,3 +69,4 @@ Advanced data representation functions for Owl Tech’s CPU design team.
     Test 49: to_twos_complement(0) -> Expected: "00000000000000000000000000000000", Got: "00000000000000000000000000000000" [PASS]
     Test 50: to_twos_complement(2147483647) -> Expected: "01111111111111111111111111111111", Got: "01111111111111111111111111111111" [PASS]
     Test 51: to_twos_complement(-2147483648) -> Expected: "10000000000000000000000000000000", Got: "10000000000000000000000000000000" [PASS]
+    Summary: 51/51 tests passed
