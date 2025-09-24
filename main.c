@@ -14,6 +14,7 @@ int main() {
 	}
 	char line[256];
     int test_num = 1;
+    int numPassed = 0;
     //read the file line by line
     while (fgets(line, sizeof(line), file) != NULL) {
         //Skip comment lines and blanks
@@ -32,6 +33,7 @@ int main() {
 
             if (strcmp(actualStr, expectedStr) == 0) {
                 printf("Test %d: oct_to_bin(\"%s\") -> Expected: \"%s\", Got: \"%s\" [PASS]\n",test_num, inputStr, expectedStr, actualStr);
+                numPassed++;
             }
             else {
                 printf("Test %d: oct_to_bin(\"%s\") -> Expected: \"%s\", Got: \"%s\" [FAIL]\n", test_num, inputStr, expectedStr, actualStr);
@@ -49,6 +51,7 @@ int main() {
 
             if (strcmp(actualStr, expectedStr) == 0) {
                 printf("Test %d: oct_to_hex(\"%s\") -> Expected: \"%s\", Got: \"%s\" [PASS]\n", test_num, inputStr, expectedStr, actualStr);
+				numPassed++;
             }
             else {
                 printf("Test %d: oct_to_hex(\"%s\") -> Expected: \"%s\", Got: \"%s\" [FAIL]\n", test_num, inputStr, expectedStr, actualStr);
@@ -66,6 +69,7 @@ int main() {
 
             if (strcmp(actualStr, expectedStr) == 0) {
                 printf("Test %d: hex_to_bin(\"%s\") -> Expected: \"%s\", Got: \"%s\" [PASS]\n", test_num, inputStr, expectedStr, actualStr);
+                numPassed++;
             }
             else {
                 printf("Test %d: hex_to_bin(\"%s\") -> Expected: \"%s\", Got: \"%s\" [FAIL]\n", test_num, inputStr, expectedStr, actualStr);
@@ -86,6 +90,7 @@ int main() {
 
             if (strcmp(actualStr, expectedStr) == 0) {
                 printf("Test %d: to_sign_magnitude(%d) -> Expected: \"%s\", Got: \"%s\" [PASS]\n", test_num, num, expectedStr, actualStr);
+                numPassed++;
             }
             else {
                 printf("Test %d: to_sign_magnitude(%d) -> Expected: \"%s\", Got: \"%s\" [FAIL]\n", test_num, num, expectedStr, actualStr);
@@ -105,6 +110,7 @@ int main() {
             
             if (strcmp(actualStr, expectedStr) == 0) {
                 printf("Test %d: to_ones_complement(%d) -> Expected: \"%s\", Got: \"%s\" [PASS]\n", test_num, num, expectedStr, actualStr);
+                numPassed++;
             }
             else {
                 printf("Test %d: to_ones_complement(%d) -> Expected: \"%s\", Got: \"%s\" [FAIL]\n", test_num, num, expectedStr, actualStr);
@@ -124,6 +130,7 @@ int main() {
 
             if (strcmp(actualStr, expectedStr) == 0) {
                 printf("Test %d: to_twos_complement(%d) -> Expected: \"%s\", Got: \"%s\" [PASS]\n", test_num, num, expectedStr, actualStr);
+                numPassed++;
             }
             else {
                 printf("Test %d: to_twos_complement(%d) -> Expected: \"%s\", Got: \"%s\" [FAIL]\n", test_num, num, expectedStr, actualStr);
@@ -133,6 +140,7 @@ int main() {
         //increment test number
         test_num++;
     }
+    printf("Summary: %d/%d tests passed\n", numPassed, test_num - 1);
     //close file when finished
 	fclose(file);
 	return 0;
